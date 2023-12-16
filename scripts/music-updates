@@ -1,0 +1,6 @@
+#! /bin/bash
+
+eww update revealMusic=true
+sleep 3s
+eww update revealMusic=false
+
