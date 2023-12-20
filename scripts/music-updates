@@ -1,6 +1,12 @@
 #! /bin/bash
 
+PID=$$
+echo $PID > /tmp/music-pid
 eww update revealMusic=true
 sleep 3s
-eww update revealMusic=false
+NEWPID=$(cat /tmp/music-pid)
+
+if  [ "$PID" == "$NEWPID" ]; then
+  eww update revealMusic=false
+fi
 
