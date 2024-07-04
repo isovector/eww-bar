@@ -43,7 +43,7 @@
 (defwidget bar []
   (centerbox :orientation "h" :space-evenly true
     (workspaces)
-    (revealer :reveal "${!revealInfo}" (label :text "${xmonad.title}"))
+    (revealer :reveal "${!revealInfo}" (label :text "${xmonad.title} - ${xmonad.layout}" :limit-width "80"))
     ; (box :halign "h" :space-evenly true  (weather)  )
     (sidestuff)
   )
@@ -106,7 +106,6 @@
 
 (defwidget sidestuff []
   (box :class "sidestuff ${notifications}" :orientation "h" :space-evenly false :halign "end" :spacing 6
-      (revealer :transition "slideright" :reveal "${!revealInfo && !revealMusic}" (label :text "${cava} "))
       (spotify)
       (weather)
       (date)
@@ -126,7 +125,7 @@
 (defwidget spotify []
   (musicinfo
     (label :text " ${ musicStatus == "Playing" ? "" : "" }")
-    (label :text "  ${music} ")
+    (label :text "  ${music} " :limit-width "50")
     ))
 
 (defwidget battery []
