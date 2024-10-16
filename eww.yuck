@@ -107,10 +107,11 @@
 (defwidget sidestuff []
   (box :class "sidestuff ${notifications}" :orientation "h" :space-evenly false :halign "end" :spacing 6
       (spotify)
-      (weather)
+      ; (weather)
       (date)
       (time)
       (battery)
+      (systray :pack-direction "ltr")
   )
 )
 
